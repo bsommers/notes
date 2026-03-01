@@ -1,0 +1,9 @@
+node_modules
+*/node_modules
+*/dist
+.git
+*.db
+data/
+.claude/
+.env
+.env.*
