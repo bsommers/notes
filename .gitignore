@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build output
+dist/
+*/dist/
+packages/web/dist/
+
+# SQLite database
+*.db
+*.db-shm
+*.db-wal
+
+# Environment
+.env
+.env.*
+
+# Editor / OS
+.DS_Store
+*.swp
+*.swo
