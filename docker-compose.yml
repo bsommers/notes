@@ -4,7 +4,7 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - ./data:/data
+      - ${DATA_DIR:-.}:/data
     environment:
       JWT_SECRET: ${JWT_SECRET:-change-me}
       NODE_ENV: production

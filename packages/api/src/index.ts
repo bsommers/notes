@@ -31,7 +31,7 @@ app.route(`${prefix}/tags`, tagsRouter);
 app.route(prefix || "/", importExportRouter);
 
 if (isProd) {
-  app.use("/*", serveStatic({ root: "./public" }));
+  app.use("/*", serveStatic({ root: "./packages/api/public" }));
 }
 
 if (process.env.NODE_ENV !== "test") {
