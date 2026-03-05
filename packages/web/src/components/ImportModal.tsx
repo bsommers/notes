@@ -13,6 +13,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
+import { getToken } from "../auth";
+
 const BASE = "/api";
 
 interface Props {
@@ -32,7 +34,7 @@ export function ImportModal({ open, onClose }: Props) {
     mutationFn: async () => {
       const res = await fetch(`${BASE}/import/text`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${getToken()}` },
         body: JSON.stringify({
           title: pasteTitle || undefined,
           content: pasteContent,
@@ -60,6 +62,7 @@ export function ImportModal({ open, onClose }: Props) {
 
       const res = await fetch(`${BASE}/import/file`, {
         method: "POST",
+        headers: { Authorization: `Bearer ${getToken()}` },
         body: form,
       });
       if (!res.ok) throw new Error(await res.text());
